@@ -7,7 +7,7 @@ function get_bro(){
          $exp[1] = $b[1];  //获取火狐浏览器的版本号  
      } elseif (stripos($sys, "Maxthon") > 0) {  
          preg_match("/Maxthon\/([\d\.]+)/", $sys, $aoyou);  
-         $exp[0] = "傲游";  
+         $exp[0] = "Maxthon";  
          $exp[1] = $aoyou[1];  
      } elseif (stripos($sys, "MSIE") > 0) {  
          preg_match("/MSIE\s+([^;)]+)+/i", $sys, $ie);  
@@ -31,7 +31,7 @@ function get_bro(){
              $exp[0] = "IE";  
          $exp[1] = $IE[1];  
      }else {  
-        $exp[0] = "未知浏览器";  
+        $exp[0] = "Unknown";  
         $exp[1] = "";   
      }  
      return $exp[0].'('.$exp[1].')';  
@@ -163,7 +163,7 @@ $agent = $_SERVER['HTTP_USER_AGENT'];
     }  
     else  
     {  
-      $os = '未知操作系统';  
+      $os = 'Unknown';  
     }  
     return $os;    
 }  
